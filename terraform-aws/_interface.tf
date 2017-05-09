@@ -3,19 +3,6 @@ variable "environment_name" {
   description = "Environment Name"
 }
 
-variable "os" {
-  # case sensitive for AMI lookup
-  description = "Operating System to use ie RHEL or Ubuntu"
-}
-
-variable "os_version" {
-  description = "Operating System version to use ie 7.3 (for RHEL) or 16.04 (for Ubuntu)"
-}
-
-variable "ssh_key_name" {
-  description = "Pre-existing AWS key name you will use to access the instance(s)"
-}
-
 # Optional variables
 variable "cluster_size" {
   default     = "3"
@@ -35,6 +22,17 @@ variable "vault_version" {
 variable "instance_type" {
   default     = "m4.large"
   description = "AWS instance type to use eg m4.large"
+}
+
+variable "os" {
+  # case sensitive for AMI lookup
+  default     = "RHEL"
+  description = "Operating System to use ie RHEL or Ubuntu"
+}
+
+variable "os_version" {
+  default     = "7.3"
+  description = "Operating System version to use ie 7.3 (for RHEL) or 16.04 (for Ubuntu)"
 }
 
 variable "region" {
