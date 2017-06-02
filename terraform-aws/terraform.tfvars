@@ -1,1 +1,2 @@
-environment_name = "vault-demo"
+environment_name = "hcg-vault"
+vault_use_tls = "false"
