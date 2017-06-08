@@ -1,9 +1,9 @@
-# Required variables
-variable "environment_name" {
-  description = "Environment Name"
+# Optional variables
+variable "environment_name_prefix" {
+  default     = "vault"
+  description = "Environment Name prefix eg my-vault-env"
 }
 
-# Optional variables
 variable "cluster_size" {
   default     = "3"
   description = "Number of instances to launch in the cluster"
@@ -69,10 +69,6 @@ output "consul_server_sg_id" {
 
 output "vault_asg_id" {
   value = "${module.vault-aws.asg_id}"
-}
-
-output "private_key_data" {
-  value = "${module.ssh-keypair-aws.private_key_data}"
 }
 
 output "ssh_key_name" {
